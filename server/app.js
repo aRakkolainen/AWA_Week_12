@@ -5,7 +5,13 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+if (process.env.NODE_ENV === "development") {
+    var corsOptions = {
+        origin: "http://localhost:3000",
+        optionsSuccessStatus: 200,
+    };
+    app.use(cors(corsOptions));
+}
 var app = express();
 const mongoose = require("mongoose");
 //Connecting to mongoDB based on lecture materials from week 5:
