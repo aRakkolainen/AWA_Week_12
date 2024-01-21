@@ -13,5 +13,6 @@
     "build": "cd client && npm run build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC", 
+  "proxy": "http://localhost:1234"
 }
