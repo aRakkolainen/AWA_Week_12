@@ -18,4 +18,9 @@ router.post("/api/book", async (req, res) => {
   }
 })
 
+router.get("/book/:book", (req, res) => {
+  //Finding this book from the database!
+  console.log(req.params.book);
+})
+
 module.exports = router;
