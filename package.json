@@ -9,10 +9,15 @@
     "dev:client": "cd client && npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "cd server && npm install",
-    "install": "cd client && npm install", 
+    "install": "cd client && npm install",
     "build": "cd client && npm run build"
   },
   "author": "",
-  "license": "ISC", 
-  "proxy": "http://localhost:1234"
+  "license": "ISC",
+  "proxy": "http://localhost:1234",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "http-proxy-middleware": "^2.0.6",
+    "mongoose": "^8.1.0"
+  }
 }

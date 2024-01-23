@@ -1,8 +1,8 @@
 //import logo from './logo.svg';
 import {useState, useEffect} from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import InputForm from "./components/InputForm";
-import ShowBooks from "./components/ShowBooks";
+import BookData from "./components/BookData";
+//import BookItem from "./components/BookItem";
 import './App.css';
 
 function App() {
@@ -10,6 +10,14 @@ function App() {
     /*const handleChange = (e) => {
         setBookData(...bookData,[e.target.name], e.target.value)
     }*/
+    // Fetching the data from database!
+    useEffect(() => {
+      fetch("/book/:book")
+      .then(response => response.json())
+      .then(json => setBookData(json));
+    })
+
+    console.log(bookData)
   return (
     <Router>
     <div className="App">
@@ -25,7 +33,8 @@ function App() {
         <input id="submit" type="submit" value="Submit"></input>
         </form> 
     </>}></Route>
-      <Route path="/book/:book" element={<ShowBooks></ShowBooks>}></Route>
+      <Route path="/book/:book" element={
+      <BookData></BookData>}></Route>
       </Routes>
     </div>
     </Router>
