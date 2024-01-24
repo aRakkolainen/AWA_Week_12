@@ -3,9 +3,9 @@ var router = express.Router();
 const Books = require("../models/Books");
 
 /* GET home page. */
-/*router.get('/', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
-});*/
+});
 
 // Route for users to save books to database
 router.post("/api/book", async (req, res) => {
@@ -18,7 +18,7 @@ router.post("/api/book", async (req, res) => {
   }
 })
 
-router.get("/book/:book", async (req, res) => {
+router.get("/book/Bear", async (req, res) => {
   //Finding this book from the database!
   console.log(req.params.book);
   let book = await Books.findOne({name: req.params.book}).exec(); 
@@ -29,11 +29,12 @@ router.get("/book/:book", async (req, res) => {
       pages: book.pages
     }
     console.log("Book found!")
+    console.log(data);
     res.send({message: data});
   }
   else {
     console.log("BOOK NOT FOUND!")
-    res.send({"message": "404 Not found!"});
+    res.send({message: "404 Not found!"});
   }
 })
 

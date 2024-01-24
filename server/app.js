@@ -21,7 +21,9 @@ app.use(cookieParser());
 
 //app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use("/book", indexRouter);
+app.use("/", indexRouter);
+
+app.use("/api", indexRouter);
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.resolve("..", "client", "build")));
     app.get("*", (req, res) => 
