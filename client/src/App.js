@@ -1,5 +1,5 @@
 //import logo from './logo.svg';
-//import {useState, useEffect} from "react";
+import {useState, useEffect} from "react";
 // Creating form with post request in React is based on this tutorial: https://medium.com/@64rohanmalo/make-post-request-in-react-66b7e458ca1f
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import BookData from "./components/BookData";
@@ -7,16 +7,17 @@ import BookData from "./components/BookData";
 import './App.css';
 
 function App() {
-  //const [bookData, setBookData] = useState({});
+  const [bookData, setBookData] = useState({});
     /*const handleChange = (e) => {
         setBookData(...bookData,[e.target.name], e.target.value)
     }*/
     // Fetching the data from database!
-    /*useEffect(() => {
+    useEffect(() => {
       fetch("/book/:book")
       .then(response => response.json())
       .then(json => setBookData(json));
-    })*/
+    })
+    console.log(bookData);
 
   return (
     <Router>

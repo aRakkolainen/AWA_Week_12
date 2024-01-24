@@ -19,7 +19,7 @@ router.post("/api/book", async (req, res) => {
   }
 })
 
-router.get("/book/Bear", async (req, res) => {
+router.get("/book/:book", async (req, res) => {
   //Finding this book from the database!
   console.log(req.params.book);
   let book = await Books.findOne({name: req.params.book}).exec(); 
