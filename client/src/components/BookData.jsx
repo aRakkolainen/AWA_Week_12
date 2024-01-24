@@ -7,7 +7,7 @@ const BookData = () => {
     //Here we want to fetch data about book from the database!
     useEffect(() => {
         fetch("/book/:" + book)
-        .then (response => response.json())
+        .then (response => console.log(response.json()))
         .then (json => setData(json)) 
     })
     //console.log(data);

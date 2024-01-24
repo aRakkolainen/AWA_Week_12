@@ -1,5 +1,6 @@
 //import logo from './logo.svg';
 //import {useState, useEffect} from "react";
+// Creating form with post request in React is based on this tutorial: https://medium.com/@64rohanmalo/make-post-request-in-react-66b7e458ca1f
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import BookData from "./components/BookData";
 //import BookItem from "./components/BookItem";
@@ -22,12 +23,12 @@ function App() {
     <div className="App">
       <h1>Books</h1>
       <Routes>
-      <Route path="/" element={<><form>
-        <input id="name" type="string" placeholder="Name for the book.."></input>
+      <Route path="/" element={<><form action="/api/book" method="POST">
+        <input id="name" name="name" type="string" placeholder="Name for the book.."></input>
         <br></br>
-        <input id="author" type="string" placeholder="Name for the author.."></input>
+        <input id="author" name="author" type="string" placeholder="Name for the author.."></input>
         <br></br>
-        <input id="pages" type="number" placeholder="Number of pages in the book"></input>
+        <input id="pages" name="pages" type="number" placeholder="Number of pages in the book"></input>
         <br></br>
         <input id="submit" type="submit" value="Submit"></input>
         </form> 

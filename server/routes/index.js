@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 
 // Route for users to save books to database
 router.post("/api/book", async (req, res) => {
+  console.log(req.body);
   if (req.body) {
     let newBook = new Books({name: req.body.name, author: req.body.author, pages: req.body.pages});
     await newBook.save(); 
