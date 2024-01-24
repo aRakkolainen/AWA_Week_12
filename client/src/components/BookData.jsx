@@ -2,19 +2,21 @@ import {useParams} from 'react-router-dom';
 import {useEffect, useState} from "react";
 
 const BookData = () => {
-    const  {name} = useParams();
+    const  {book} = useParams();
     const [data, setData] = useState({});
     //Here we want to fetch data about book from the database!
-    useEffect(()=> {
-        fetch("/book/"+name)
-        .then(response => response.json())
-        .then(json => setData(json))
-    }, [name])
+    useEffect(() => {
+        fetch("/book/:" + book)
+        .then (response => console.log(response.status))
+        .then (json => setData(json)) 
+    })
+    //console.log(response)
+    //console.log(data.name)
     return(
         <div>
-            <p>{data.name}</p>
-            <p>{data.author}</p>
-            <p>{data.pages}</p>
+            <h3>{book}</h3>
+            <p></p>
+            <p></p>
         </div>
     )
 

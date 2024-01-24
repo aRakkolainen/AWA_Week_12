@@ -19,9 +19,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 //app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+//app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use("/api", indexRouter);
+app.use("/book", indexRouter);
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.resolve("..", "client", "build")));
     app.get("*", (req, res) => 
