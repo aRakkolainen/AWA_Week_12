@@ -13,11 +13,11 @@ function App() {
     }*/
     // Fetching the data from database!
     useEffect(() => {
-      fetch("/book/:book")
-      .then(response => response.json())
+      fetch("/book/Cinderella")
+      .then(response => console.log(response.json()))
       .then(json => setBookData(json));
     })
-    console.log(bookData);
+    //console.log();
 
   return (
     <Router>
@@ -36,7 +36,7 @@ function App() {
     </>}>
 
     </Route>
-      <Route path="/book/:book" element={<BookData />}></Route>
+      <Route path="/book/:bookName" element={<BookData />}></Route>
       </Routes>
     </div>
     </Router>
